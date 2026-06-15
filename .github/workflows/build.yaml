@@ -5,6 +5,11 @@ jobs:
   build:
     name: Build for Linux & Windows
     runs-on: ubuntu-latest
+    permissions:
+        contents: write       # Required to push code, create tags, or create releases
+        pull-requests: write  # Required to comment on or merge PRs
+        issues: write         # Required to interact with issue tracking
+        security-events: write # Required for Code Scanning/Dependabot uploads
     steps:
       - uses: actions/checkout@v3
 
